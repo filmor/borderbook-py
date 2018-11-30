@@ -1,0 +1,16 @@
+[package]
+name = "borderbook_py"
+version = "0.1.0"
+authors = ["Benedikt Reinartz <filmor@gmail.com>"]
+edition = "2018"
+build = "build.rs"
+
+[lib]
+name = "borderbook_py"
+crate-type = ["cdylib"]
+
+[dependencies]
+borderbook = "0.1.0"
+
+[build-dependencies]
+cbindgen = "0.4"
