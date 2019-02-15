@@ -13,4 +13,4 @@ crate-type = ["cdylib"]
 borderbook = "0.1.0"
 
 [build-dependencies]
-cbindgen = "0.4"
+cbindgen = "0.7.1"

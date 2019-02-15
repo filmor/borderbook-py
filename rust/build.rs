@@ -4,9 +4,11 @@ use std::env;
 
 fn main() {
     let crate_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    let mut config: cbindgen::Config = Default::default();
-    config.language = cbindgen::Language::C;
-    cbindgen::generate_with_config(&crate_dir, config)
+    cbindgen::Builder::new()
+      .with_language(cbindgen::Language::C)
+      .with_crate(crate_dir)
+      .with_no_includes()
+      .generate()
       .unwrap()
       .write_to_file("target/borderbook_py.h");
 }
